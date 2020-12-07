@@ -80,7 +80,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
     public NetTicTacToe() {
  
  
-        super("Net Tic Tac Toe 2012");
+        super("РљСЂРµСЃС‚РёРєРё-РЅРѕР»РёРєРё ");
  
  
         this.setSize(new Dimension(MY_WIDTH, MY_HEIGHT));
@@ -103,7 +103,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
         borderPanel.setSize(300, 20);
         borderPanel.setMinimumSize(new Dimension(300, 20));
  
-        serverButton = new JButton("I want to be a server!");
+        serverButton = new JButton("РЇ С…РѕС‡Сѓ Р±С‹С‚СЊ СЃРµСЂРІРµСЂРѕРј!");
         ipButton = new JButton("Connect!");
  
  
@@ -160,7 +160,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
                 }
  
  
-                setTitle("Your IP: " + thisIp.getHostAddress());
+                setTitle("Р’Р°С€ IP: " + thisIp.getHostAddress());
  
                 isServer = true;
                 modeReady = true;
@@ -188,8 +188,8 @@ public class NetTicTacToe extends JFrame implements Runnable {
             }
         });
  
-        clientButton = new JButton("I want to be a client!");
-        ipField = new JTextField("Input server's IP here...");
+        clientButton = new JButton("РЇ С…РѕС‡Сѓ Р±С‹С‚СЊ РєР»РёРµРЅС‚РѕРј!");
+        ipField = new JTextField("Р’РІРµРґРёС‚Рµ IP СЃРµСЂРІРµСЂР° Р·РґРµСЃСЊ...");
         ipField.setColumns(24);
  
         ipField.addMouseListener(new MouseAdapter() {
@@ -197,7 +197,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
             @Override
             public void mouseClicked(MouseEvent me) {
  
-                if (ipField.getText().equals("Input server's IP here...")) {
+                if (ipField.getText().equals("Р’РІРµРґРёС‚Рµ IP СЃРµСЂРІРµСЂР° Р·РґРµСЃСЊ...")) {
  
                     // clear the box...
  
@@ -389,7 +389,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
         return false;
     }
  
-    // то же самое для ноликов
+    // С‚Рѕ Р¶Рµ СЃР°РјРѕРµ РґР»СЏ РЅРѕР»РёРєРѕРІ
     public static boolean isNolikWin() {
  
  
@@ -519,7 +519,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
                             break;
  
                         } else {
-                            // иначе - ждем, потом - все снова
+                            // РёРЅР°С‡Рµ - Р¶РґРµРј, РїРѕС‚РѕРј - РІСЃРµ СЃРЅРѕРІР°
                             try {
                                 Thread.sleep(5);
                             } catch (InterruptedException ex) {
@@ -543,13 +543,13 @@ public class NetTicTacToe extends JFrame implements Runnable {
                         int verStep = Integer.parseInt(words[0]);
                         int horStep = Integer.parseInt(words[1]);
  
-                        // ставим в полученные координаты символ нолика
+                        // СЃС‚Р°РІРёРј РІ РїРѕР»СѓС‡РµРЅРЅС‹Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ СЃРёРјРІРѕР» РЅРѕР»РёРєР°
                         board[verStep][horStep] = 2;
                         
-                        // перерисовываем доску
+                        // РїРµСЂРµСЂРёСЃРѕРІС‹РІР°РµРј РґРѕСЃРєСѓ
                         gf.repaint();
                         
-                        // теперь мы ( клиент ) можем ходить
+                        // С‚РµРїРµСЂСЊ РјС‹ ( РєР»РёРµРЅС‚ ) РјРѕР¶РµРј С…РѕРґРёС‚СЊ
                         clientCanGo = true;                       
                         
                         break;
@@ -670,7 +670,11 @@ public class NetTicTacToe extends JFrame implements Runnable {
     
     public static class GameFrame extends JFrame {
  
-        GameFrame.GamePanel gp;
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 7683865923394431953L;
+		GameFrame.GamePanel gp;
  
     
         public GameFrame(String n) {
@@ -699,7 +703,11 @@ public class NetTicTacToe extends JFrame implements Runnable {
     
         public static class GamePanel extends JPanel {
  
-            boolean gameOverHappened = false;
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = -4421687286791047353L;
+			boolean gameOverHappened = false;
  
             public GamePanel() {
  
@@ -850,11 +858,11 @@ public class NetTicTacToe extends JFrame implements Runnable {
     
                             if( isServer ){
                                 
-                                JOptionPane.showMessageDialog(null, "Вы проиграли!");
+                                JOptionPane.showMessageDialog(null, "Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё!");
                             }
                             else{
                                 
-                                JOptionPane.showMessageDialog(null, "Вы победили!");
+                                JOptionPane.showMessageDialog(null, "Р’С‹ РїРѕР±РµРґРёР»Рё!");
                             }
                             System.exit(0);
                         }                   
@@ -875,11 +883,11 @@ public class NetTicTacToe extends JFrame implements Runnable {
     
                             if( isServer ){
                                 
-                                JOptionPane.showMessageDialog(null, "Вы победили!");
+                                JOptionPane.showMessageDialog(null, "Р’С‹ РїРѕР±РµРґРёР»Рё!");
                             }
                             else{
                                 
-                                JOptionPane.showMessageDialog(null, "Вы проиграли!");
+                                JOptionPane.showMessageDialog(null, "Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё!");
                             }
                             System.exit(0);
                         }
@@ -898,7 +906,7 @@ public class NetTicTacToe extends JFrame implements Runnable {
                         @Override
                         public void run() {
                     
-                            JOptionPane.showMessageDialog(null, "Ничья!!!");
+                            JOptionPane.showMessageDialog(null, "РќРёС‡СЊСЏ!!!");
                             System.exit(0);
                         }
                     });
